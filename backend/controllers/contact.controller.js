@@ -6,7 +6,7 @@ exports.createContact = async (req, res) => {
     if (!req.body.number) {
       return res.status(406).json({ msg: "number is required" })
     }
-    const found = await Contact.findOne({ name: (req.body.name) })
+    const found = await Contact.findOne({ number: (req.body.number) })
 
     if (found) {
       return res.status(406).json({ msg: "number already taken try another one" })
