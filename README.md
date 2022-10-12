@@ -1,39 +1,53 @@
-# password-recovery-api-NodeJS
-for update version clone social-media-backend-branch
+# Contacts-CRUD-api-NodeJS
 CLONE
 ```
-https://github.com/AMRESH-SHARMA/password-recovery-api-NodeJS.git
+https://github.com/AMRESH-SHARMA/Vouch-assignment-NodeJS.git
 ```
 RUN
 ```
 npm i &&
-node server
+npm run start
 
 ```
 
 API
 ```
- POST http://localhost:8080/register                  [INPUT:  email, unique username, password in json body]
- POST http://localhost:8080/login                     [INPUT:  registered username, password in json body]
- POST http://localhost:8080/forgetPwd                 [INPUT:  email in json body]
- POST http://localhost:8080/updatePwd/:userId/:token  [INPUT:  userId, token in json body]
+
+ POST http://localhost:8000/getjwt                   [INPUT: username]
+ POST http://localhost:8000/contact                  [INPUT: username, unique number]
+ POST http://localhost:8000/contact/bulk             [INPUT: JSON array contains username and number]  
+
+ GET http://localhost:8000/contact                   
+ PUT http://localhost:8000/contact/:id               [INPUT: username, unique number]  
+ DELETE http://localhost:8000/contact/:id            
 
 ```
-_____________________________
+_________________
 #Backend Packages
 * dotenv
 * express
-* joi
 * md5
 * mongoose
-* nodemailer
-_____________________________
-# Working
-* User can register using email, unique username, password.
-* joi package used for vadilation before saving data to db. 
-* If username/email already exist then server will ask to choose unique one.
-_____________________________
-* Login using registered username and password
-_____________________________
-* To reset/forget password send email in json body, server will send you token with userId. 
-* After receiving token and user id hit another request to update password. 
+___________
+
+#Task: Address Book (Design APIs to maintain address book)
+ 
+ Implement following endpoints
+* Add a new contact.
+* Add bulk contacts.
+* Fetch details of single contact.
+* Fetch phase matching results.
+* Fetch the list of contacts with pagination.
+* Update the given contact.
+* Delete the given contact.
+* Add JWT authentication to secure API.
+* Implement an endpoint to get the JWT token.
+Do’s
+* Exception handling and Error API response.
+* Add validation wherever required.
+*Use dependency injection.
+*Add proper comments.
+*Add README file for documentation and execution detail.
+*Use of TypeScript - optional (Add benefit)
+*Write the test cases - optional (Add benefit)
+
